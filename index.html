@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>すえきゅーどっとねっと</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width" />
+  <title>discord</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <noscript>
+    <p>JavaScriptを有効にしろハゲ</p>
+  </noscript>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="script.js"></script>
+  <h1>Token取得しよう…</h1>
+  <br>
+  <form name="zako">
+    <textarea name="email:pass" placeholder="改行で区切れる。例:aho@uma.be:gaijikun" rows="10" cols="40"></textarea>
+    <br>
+    <input type="button" onclick="senddis()" value="取得">
+    <input type="button" onclick="cleardis()" value="クリア">
+    <input type="button" onclick="copydis()" value="コピー">
+  </form>
+  <textarea id="output" readonly=true rows="20" cols="40"></textarea>
+  <br>
+  <input type="button" onclick="copytoken()" value="コピー">
+</body>
+</html>
