@@ -1,6 +1,18 @@
 body {
-  background: #001E43;
+  background: #222426;
 }
 textarea {
-  background: #001E43;
+  background: #222426;
+}
+usage {
+  font-size: 75%;
+  color: #08e8df;
+}
+thth {
+  font-size: 250%;
+  color: #114514;
+}
+input {
+  background: url("invisibility.png");
+  background-color: #444446;
 }
