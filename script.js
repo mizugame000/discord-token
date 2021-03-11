@@ -8,15 +8,17 @@ function senddis(){
     .post('https://discord.com/api/v8/auth/login')
     .send({email:dt[0],password:dt[1]})
     .end(function(er,re){
-      if(!re.ok) return appendlog('エラーが発生しました。 '+dt[0]+'\n');
+      if(!re.ok) return appendlog('エラーが発生しました。 '+dt[0]);
       var body = re.body;
       appendlog(body.token);
+      appendlog(JSON.stringify(body,null,2))
+      appendlog(sp)
     });
   });
 }
 
 function appendlog(strings){
-  document.getElementById("output").innerHTML += '[TokenGetter-with-web]: '+strings;
+  document.getElementById("output").innerHTML += '[TokenGetter-with-web]: '+strings+'\n';
 }
 
 function cleardis(){
