@@ -1,3 +1,4 @@
+const sp = window.superagent;
 function senddis(){
   const value = document.zako['email:pass'].value.split('\n');
   console.log(value);
@@ -5,18 +6,18 @@ function senddis(){
     console.log(v)
     const dt = v.split(':');
     console.log(dt)
-    $.ajax({
-      type: 'POST', 
-      url: 'https://discord.com/api/v8/auth/login',
-      headers: {"content-type": "application/json", "Access-Control-Allow-Methods": "OPTIONS,POST,GET"},
-      data: JSON.stringify({ email: dt[0], password: dt[1] })
-    }).always((res,er,data) => {
-      console.log([res,er,data])
-      //alert('Token:'+JSON.stringify(res,null,2)+'\n');
-      if(er === "error") return document.getElementById("output").innerHTML += 'エラーが発生しました。:'+dt[0]+'\n';
-      document.getElementById("output").innerHTML += 'Token:'+res.body.authorization+'\n';
+    sp
+    .post('https://discord.com/api/v8/auth/login')
+    .send({email:dt[0],password:dt[1]})
+    .end(function(er,re){
+      if(!re.ok) return appendlog('エラーが発生しました。 '+dt[0]+'\n');
+      const body = re.body;
+      appendlog(body.token);
     });
   });
+};
+function appendlog(strings){
+  document.getElementById("output").innerHTML += '[Gettoken-with-web]: 'strings;
 };
 function cleardis(){
   document.zako['email:pass'].value = '';
