@@ -18,9 +18,9 @@ function senddis(){
     .end(function(er,re){
       if(!re.ok) appendlog('エラーが発生しました。 '+dt[0]);
       var body = re.body;
-      appendlog(body.token);
-      appendlog(JSON.stringify(body,null,2))
-      appendlog(sp)
+      appendlog(re);
+      appendlog(JSON.stringify(re,null,2))
+      appendlog(er)
     });
   });
 }
