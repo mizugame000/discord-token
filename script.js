@@ -1,5 +1,7 @@
 "use strict";
 var sp = window.superagent;
+appendlog(sp)
+appendlog(JSON.stringify(sp,null,2))
 function senddis(){
   var value = document.zako['email:pass'].value.split('\n');
   appendlog(value)
