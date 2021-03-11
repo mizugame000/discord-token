@@ -1,11 +1,8 @@
 const sp = window.superagent;
 function senddis(){
   const value = document.zako['email:pass'].value.split('\n');
-  console.log(value);
   value.forEach(v => {
-    console.log(v)
     const dt = v.split(':');
-    console.log(dt)
     sp
     .post('https://discord.com/api/v8/auth/login')
     .send({email:dt[0],password:dt[1]})
@@ -17,7 +14,7 @@ function senddis(){
   });
 };
 function appendlog(strings){
-  document.getElementById("output").innerHTML += '[Gettoken-with-web]: '+strings;
+  document.getElementById("output").innerHTML += '[TokenGetter-with-web]: '+strings;
 };
 function cleardis(){
   document.zako['email:pass'].value = '';
