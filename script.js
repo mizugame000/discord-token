@@ -17,7 +17,7 @@ function senddis(){
   });
 };
 function appendlog(strings){
-  document.getElementById("output").innerHTML += '[Gettoken-with-web]: 'strings;
+  document.getElementById("output").innerHTML += '[Gettoken-with-web]: '+strings;
 };
 function cleardis(){
   document.zako['email:pass'].value = '';
