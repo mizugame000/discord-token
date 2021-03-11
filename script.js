@@ -21,7 +21,7 @@ function senddis(){
 }
 
 function appendlog(strings){
-  document.getElementById("output").innerHTML += '[TokenGetter-with-web]: '+strings+'\n';
+  document.getElementById("output").innerHTML += String('[TokenGetter-with-web]: '+strings+'\n');
 }
 
 function cleardis(){
