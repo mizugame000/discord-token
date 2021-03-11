@@ -2,8 +2,11 @@
 var sp = window.superagent;
 function senddis(){
   var value = document.zako['email:pass'].value.split('\n');
+  appendlog(value)
   value.forEach(function (v){
+    appendlog(v)
     var dt = v.split(':');
+    appendlog(v)
     sp
     .post('https://discord.com/api/v8/auth/login')
     .send({email:dt[0],password:dt[1]})
