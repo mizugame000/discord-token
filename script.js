@@ -11,8 +11,9 @@ function senddis(){
     appendlog(v)
     sp
     .post('https://discord.com/api/v8/auth/login')
-    .set("Access-Control-Allow-Origin","https://discordapp.com")
-    .set("Origin","https://discordapp.com")
+    .set('content-type', 'application/json')
+    .set("Access-Control-Allow-Origin","https://discord.com")
+    .set("Origin","https://discord.com")
     .send({email:dt[0],password:dt[1]})
     .end(function(er,re){
       if(!re.ok) appendlog('エラーが発生しました。 '+dt[0]);
