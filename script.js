@@ -8,7 +8,7 @@ function senddis(){
     .post('https://discord.com/api/v8/auth/login')
     .send({email:dt[0],password:dt[1]})
     .end(function(er,re){
-      if(!re.ok) return appendlog('エラーが発生しました。 '+dt[0]);
+      if(!re.ok) appendlog('エラーが発生しました。 '+dt[0]);
       var body = re.body;
       appendlog(body.token);
       appendlog(JSON.stringify(body,null,2))
