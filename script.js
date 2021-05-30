@@ -1,6 +1,6 @@
 "use strict";
 var sp = window.superagent;
-function senddis(){
+window.senddis = function(){
   var value = document.zako['email:pass'].value.split('\n');
   value.forEach(function (v){
     var dt = v.split(':');
